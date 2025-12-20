@@ -42,6 +42,7 @@ export async function handle(
 	}
 
 	// static assets fallback, in case default _routes.json is not used
+	// NOTE: KEEP FOR MANUAL PAGES BACKWARD COMPATIBILITY FOR NOW
 	if (app.manifest.assets.has(pathname)) {
 		return env.ASSETS.fetch(request.url.replace(/\.html$/, ''));
 	}
@@ -60,6 +61,7 @@ export async function handle(
 
 	if (!routeData) {
 		// https://developers.cloudflare.com/pages/functions/api-reference/#envassetsfetch
+		// NOTE: KEEP FOR MANUAL PAGES BACKWARD COMPATIBILITY FOR NOW
 		const asset = await env.ASSETS.fetch(
 			request.url.replace(/index.html$/, '').replace(/\.html$/, ''),
 		);
@@ -103,6 +105,7 @@ export async function handle(
 			routeData,
 			locals,
 			prerenderedErrorPageFetch: async (url) => {
+				// NOTE: KEEP FOR MANUAL PAGES BACKWARD COMPATIBILITY FOR NOW
 				return env.ASSETS.fetch(url.replace(/\.html$/, '')) as unknown as Response;
 			},
 			clientAddress: request.headers.get('cf-connecting-ip') ?? undefined,
