@@ -164,5 +164,6 @@ async function createSerializedManifest(settings: AstroSettings): Promise<Serial
 			debugInfoOutput: '',
 		},
 		logLevel: settings.logLevel,
+		canCollectStaticHeaders: settings.adapter?.adapterFeatures?.experimentalStaticHeaders ?? false,
 	};
 }

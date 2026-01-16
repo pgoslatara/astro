@@ -201,5 +201,6 @@ export async function createDevelopmentManifest(settings: AstroSettings): Promis
 			debugInfoOutput: '',
 		},
 		logLevel: settings.logLevel,
+		canCollectStaticHeaders: settings.adapter?.adapterFeatures?.experimentalStaticHeaders ?? false,
 	};
 }

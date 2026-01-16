@@ -346,8 +346,11 @@ importers:
 
   examples/minimal:
     dependencies:
+      '@astrojs/node':
+        specifier: workspace:*
+        version: link:../../packages/integrations/node
       astro:
-        specifier: ^6.0.0-beta.1
+        specifier: workspace:*
         version: link:../../packages/astro
 
   examples/portfolio:
@@ -4381,6 +4384,12 @@ importers:
         version: link:../../..
 
   packages/astro/test/fixtures/static-build/pkg: {}
+
+  packages/astro/test/fixtures/static-headers:
+    dependencies:
+      astro:
+        specifier: workspace:*
+        version: link:../../..
 
   packages/astro/test/fixtures/static-redirect:
     dependencies:
