@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "workspace:*",
-    "@astrojs/node": "workspace:*"
+    "astro": "^6.0.0-beta.1"
   }
 }

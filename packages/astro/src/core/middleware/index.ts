@@ -123,9 +123,7 @@ function createContext({
 				insertStyleHash() {},
 			};
 		},
-		get staticHeaders() {
-			return undefined;
-		},
+		setStaticHeader(_key, _value) {},
 	};
 	return Object.assign(context, {
 		getActionResult: createGetActionResult(context.locals),
